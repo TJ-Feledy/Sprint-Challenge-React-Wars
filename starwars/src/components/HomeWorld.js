@@ -11,23 +11,33 @@ class HomeWorld extends Component {
   }
 
   componentDidMount() {
-    this.getCharacters({});
-          console.log(this.props)
+    // NEEDS HOMEWORLD URL BELOW
+    this.getCharacters(`${this.props.homeworld}`);
+          console.log(this.props.homeworld)
 
   }
 
   getCharacters = URL => {
     fetch(URL)
       .then(res => {
+        // console.log(res.json());
         return res.json();
       })
       .then(data => {
-        this.setState({ homeworld: data.results });
+        this.setState({ homeworld: data });
       })
       .catch(err => {
         throw new Error(err);
       });
   };
+  // NEED TO RENDER THE HOMEWORLD ELEMENT
+  render() {
+    return (
+      <div className='homeworld'>
+        <p>{this.state.homeworld.name}</p>
+      </div>
+    )
+  }
 }
 
 export default HomeWorld;

@@ -14,8 +14,8 @@ function Character(props) {
       </p>
       <p>
         <strong>Home World: </strong>
-        <HomeWorld homeworld={props.character.homeworld} />
       </p>
+      <HomeWorld homeworld={props.character.homeworld} />
     </div>
   );
 };
