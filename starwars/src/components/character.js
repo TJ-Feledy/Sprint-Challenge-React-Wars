@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeWorld from './HomeWorld'
+import Species from './Species'
 
 function Character(props) {
 
@@ -9,12 +10,7 @@ function Character(props) {
       <p>
         <strong>Gender: </strong> {props.character.gender}
       </p>
-      <p>
-        <strong>Species: </strong>
-      </p>
-      <p>
-        <strong>Home World: </strong>
-      </p>
+      <Species species={props.character.species} />
       <HomeWorld homeworld={props.character.homeworld} />
     </div>
   );

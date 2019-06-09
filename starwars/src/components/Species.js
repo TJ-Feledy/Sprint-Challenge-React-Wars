@@ -1,20 +1,18 @@
-import React from 'react'
-import { Component } from 'react'
+import React from "react";
+import { Component } from "react";
 
-
-class HomeWorld extends Component {
+class Species extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      homeworld: ""
+      species: []
     };
   }
 
   componentDidMount() {
     // NEEDS HOMEWORLD URL BELOW
-    this.getCharacters(`${this.props.homeworld}`);
-          // console.log(this.props.homeworld)
-
+    this.getCharacters(`${this.props.species}`);
+    // console.log(this.props.homeworld)
   }
 
   getCharacters = URL => {
@@ -24,7 +22,7 @@ class HomeWorld extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ homeworld: data });
+        this.setState({ species: data });
       })
       .catch(err => {
         throw new Error(err);
@@ -33,11 +31,12 @@ class HomeWorld extends Component {
   // NEED TO RENDER THE HOMEWORLD ELEMENT
   render() {
     return (
-      <p className='homeworld'>
-        <strong>HomeWorld: </strong>{this.state.homeworld.name}
+      <p className="homeworld">
+        <strong>Species: </strong>
+        {this.state.species.name}, {this.state.species.classification}
       </p>
-    )
+    );
   }
 }
 
-export default HomeWorld;
+export default Species;
