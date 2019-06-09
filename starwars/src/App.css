@@ -1,8 +1,24 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+.character {
+  background: rgba(255, 255, 255,.5);
+  width: 25rem;
+  border-radius: 20px;
+  border: double 6px;
+  margin: 1rem;
+}
+
+.character h3 {
+  text-decoration: underline;
+  font-weight: 999;
+}
