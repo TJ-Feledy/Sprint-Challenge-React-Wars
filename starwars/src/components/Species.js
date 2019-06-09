@@ -10,9 +10,7 @@ class Species extends Component {
   }
 
   componentDidMount() {
-    // NEEDS HOMEWORLD URL BELOW
     this.getCharacters(`${this.props.species}`);
-    // console.log(this.props.homeworld)
   }
 
   getCharacters = URL => {
@@ -28,7 +26,7 @@ class Species extends Component {
         throw new Error(err);
       });
   };
-  // NEED TO RENDER THE HOMEWORLD ELEMENT
+
   render() {
     return (
       <p className="homeworld">

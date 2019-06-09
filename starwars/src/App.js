@@ -8,9 +8,6 @@ class App extends Component {
     super();
     this.state = {
       starwarsChars: [],
-      name: '',
-      gender: '',
-      species: [],
     };
   }
 
